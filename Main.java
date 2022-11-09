@@ -1,26 +1,35 @@
-import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
-    Scanner ler = new Scanner(System.in);
-    int valor1, valor2;
+    
+    Produto Picanha = new Produto("Picanha" , 69.80);
+    Produto Heineken = new Produto("Fardo Heineken",36.50);
+    Produto Carvao = new Produto("Carvão" , 18.00);
+    Produto Coca = new Produto("Coca cola 2l" , 7.50);
+    Produto Linguica = new Produto("Linguiça Toscana: " , 16.96);
+    Produto Asinha = new Produto("Meio da Asa: " , 21.96);
+    Produto Pao_De_Alho= new Produto("Pão de alho" , 11.00);
 
-    System.out.println("Insira um numero inteiro: ");
-    valor1 = ler.nextInt();
 
-    System.out.println("Insira outro numero inteiro: ");
-    valor2 = ler.nextInt();
-    primeiraClass nome = new primeiraClass(valor1, valor2);
+    
 
-    int soma = nome.Soma();
-    System.out.println("Soma: \n" + soma);
+    System.out.println(Picanha.id);
+    System.out.println(Heineken.id);
+    System.out.println(Carvao.id);
+    System.out.println(Coca.id);
+    System.out.println(Linguica.id);
+    System.out.println(Asinha.id);
+    System.out.println(Pao_De_Alho.id);
+    
+    Picanha.exibir();
+    Heineken.exibir();
+    Carvao.exibir();
+    Coca.exibir();
+    Linguica.exibir();
+    Asinha.exibir();
+    Pao_De_Alho.exibir();
 
-    int subt = nome.Subt();
-    System.out.println("Subtração: \n" + subt);
+    
+    
 
-    int mult = nome.Mult();
-    System.out.println("Multiplicação: \n" + mult);
-
-    int div = nome.Divs();
-    System.out.println("Divisão: \n" + div);
   }
 }
