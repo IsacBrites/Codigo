@@ -1,35 +1,37 @@
+import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
+  Controlar controlar = new Controlar();
+  Scanner leitura = new Scanner(System.in);
+    int valor = 2, valor_total,quantidade, troco, dinheiro,sim,cedula_extra=0,ler_cedula_extra=0;
+    System.out.println("Insira a quantidade de refrigerantes para compra:\n");
+    quantidade = leitura.nextInt();
+    controlar.setQuantidade(quantidade);
+    System.out.println("\nSelecione a opção de cédula:\n1- 1$\n2- 2$\n3- 5$\n4- 10$\n");
+    dinheiro = leitura.nextInt();
+    System.out.println("\nVocê desja inserir mais uma cédula?\n1- Sim\n2- Não");
+    sim = leitura.nextInt();
+    if(sim == 1){
+      System.out.println("\nSelecione a opção de cédula:\n1- 1$\n2- 2$\n3- 5$\n4- 10$\n");
+      ler_cedula_extra = leitura.nextInt();
+      if(ler_cedula_extra == 1){
+     cedula_extra = 1;
+    }
+      else if (ler_cedula_extra == 2){
+      cedula_extra= 2;
+    }
+      else if (ler_cedula_extra == 3){
+      cedula_extra = 5;
+    }
+      else{
+      cedula_extra = 10;
+    }
+      controlar.setCedula_extra(cedula_extra);
+    }
+    else{
+      controlar.setCedula_extra(0);
+    }
+    controlar.escolha(dinheiro);
     
-    Produto Picanha = new Produto("Picanha" , 69.80);
-    Produto Heineken = new Produto("Fardo Heineken",36.50);
-    Produto Carvao = new Produto("Carvão" , 18.00);
-    Produto Coca = new Produto("Coca cola 2l" , 7.50);
-    Produto Linguica = new Produto("Linguiça Toscana: " , 16.96);
-    Produto Asinha = new Produto("Meio da Asa: " , 21.96);
-    Produto Pao_De_Alho= new Produto("Pão de alho" , 11.00);
-
-
-    
-
-    System.out.println(Picanha.id);
-    System.out.println(Heineken.id);
-    System.out.println(Carvao.id);
-    System.out.println(Coca.id);
-    System.out.println(Linguica.id);
-    System.out.println(Asinha.id);
-    System.out.println(Pao_De_Alho.id);
-    
-    Picanha.exibir();
-    Heineken.exibir();
-    Carvao.exibir();
-    Coca.exibir();
-    Linguica.exibir();
-    Asinha.exibir();
-    Pao_De_Alho.exibir();
-
-    
-    
-
   }
 }
