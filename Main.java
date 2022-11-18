@@ -1,37 +1,38 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.io.*;
+
+
 class Main {
   public static void main(String[] args) {
-  Controlar controlar = new Controlar();
-  Scanner leitura = new Scanner(System.in);
-    int valor = 2, valor_total,quantidade, troco, dinheiro,sim,cedula_extra=0,ler_cedula_extra=0;
-    System.out.println("Insira a quantidade de refrigerantes para compra:\n");
-    quantidade = leitura.nextInt();
-    controlar.setQuantidade(quantidade);
-    System.out.println("\nSelecione a opção de cédula:\n1- 1$\n2- 2$\n3- 5$\n4- 10$\n");
-    dinheiro = leitura.nextInt();
-    System.out.println("\nVocê desja inserir mais uma cédula?\n1- Sim\n2- Não");
-    sim = leitura.nextInt();
-    if(sim == 1){
-      System.out.println("\nSelecione a opção de cédula:\n1- 1$\n2- 2$\n3- 5$\n4- 10$\n");
-      ler_cedula_extra = leitura.nextInt();
-      if(ler_cedula_extra == 1){
-     cedula_extra = 1;
+     Scanner ler = new Scanner(System.in);
+    int maior =0;
+     int[][] matriz = new int[4][5];
+  String nomes[][] ={ 
+{"João", "Pedro", "Maria", "Clara", "Lucas"},
+{"Pedro", "Maria"}, 
+{"Pedro", "Maria", "Clara"},
+{"João" , "Pedro" , "Lucas"}
+};  
+  System.out.println(Arrays.deepToString(nomes[0]));
+  System.out.println(Arrays.deepToString(nomes[1]));
+  System.out.println(Arrays.deepToString(nomes[2]));
+  System.out.println(Arrays.deepToString(nomes[3]));
+  for(int linha=0 ; linha < matriz.length ; linha++){
+  for(int coluna = 0; coluna < matriz[linha].length ; coluna++){
+  System.out.printf("\nQuem possui amizade com quem? [%d][%d]: ",linha+1,coluna+1);
+  matriz[linha][coluna]=ler.nextInt();
+       if(matriz[linha][coluna] > maior) { 
+      maior = matriz[linha][coluna];
     }
-      else if (ler_cedula_extra == 2){
-      cedula_extra= 2;
-    }
-      else if (ler_cedula_extra == 3){
-      cedula_extra = 5;
-    }
-      else{
-      cedula_extra = 10;
-    }
-      controlar.setCedula_extra(cedula_extra);
-    }
-    else{
-      controlar.setCedula_extra(0);
-    }
-    controlar.escolha(dinheiro);
-    
-  }
+  
+  }}
+  System.out.println("\nAs amizades são: \n");
+  for(int linha=0 ; linha < matriz.length ; linha++){
+  for(int coluna = 0; coluna < matriz[linha].length ; coluna++){
+  System.out.print(matriz[linha][coluna]); }
+  System.out.println();
+}
+
+}
 }
