@@ -1,61 +1,26 @@
-import java.util.LinkedList;
-import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Collections;
 class Main {
   public static void main(String[] args) {
-  Scanner ler = new Scanner(System.in);
-  LinkedList<String> esporte = new LinkedList<>();
-  esporte.add("Futebol");
-  esporte.add("Vôlei");
-  esporte.add("Natação");
-  esporte.add("Polo aquático");
-  esporte.add("Hipismo");
-  esporte.add("Basquete");
-  esporte.add("Handball");
-  esporte.add("Corrida");
-  esporte.add("Golfe");
-  esporte.add("Salto com vara");
-  
-    
-  System.out.printf("Percorrendo a lista:\n");
-  System.out.printf("\n");
-  int i,num,elemento1,elemento2;
-  for (i=0; i<esporte.size(); i++) {
-  System.out.printf("Posição %d %s\n", i, esporte.get(i));
-    }
-  System.out.printf("\n");
+    Scanner ler = new Scanner(System.in);
+    int valor1, valor2;
 
+    System.out.println("Insira um numero inteiro: ");
+    valor1 = ler.nextInt();
 
-  System.out.printf("Elemento adicionado:\n\n");
-    esporte.add(0,"Jiu-jitsu");
-  for (i=0; i<esporte.size(); i++) {
-    System.out.printf("Posição %d %s\n", i, esporte.get(i));
-    }
-  System.out.printf("\n");
+    System.out.println("Insira outro numero inteiro: ");
+    valor2 = ler.nextInt();
+    primeiraClass nome = new primeiraClass(valor1, valor2);
 
+    int soma = nome.Soma();
+    System.out.println("Soma: \n" + soma);
 
-  System.out.printf("Elemento que deseja acessar? ");
-  num = ler.nextInt();
-  System.out.printf("\n");
-  System.out.printf("Elemento acessado é " + esporte.get(num));
-  
-    
-  System.out.printf("\n\nLista organizada: \n");
-  Collections.sort(esporte);
-  for (String org : esporte) {
-    System.out.println(org);
-    }
+    int subt = nome.Subt();
+    System.out.println("Subtração: \n" + subt);
 
+    int mult = nome.Mult();
+    System.out.println("Multiplicação: \n" + mult);
 
-  System.out.printf("\n\nLista randomizada: \n");
-  Collections.shuffle(esporte);
-  for (String random : esporte) {
-    System.out.println(random);
-    }
-  System.out.printf("\n\nLista ao contrário: \n");
-  Collections.sort(esporte, Collections.reverseOrder());
-  for (String reverse : esporte) {
-    System.out.println(reverse);
-    }
-}}
+    int div = nome.Divs();
+    System.out.println("Divisão: \n" + div);
+  }
+}
